@@ -1,5 +1,4 @@
-pipeline {
-  agent any
+node {
   stages {
     stage('Code Checkout') {
       git 'https://github.com/ppramanik78/DevOpsTest'

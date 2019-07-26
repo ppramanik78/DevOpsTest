@@ -3,6 +3,6 @@ node {
       git 'https://github.com/ppramanik78/DevOpsTest'
     }
   stage('Compile and Package') {
-      sh 'mvn package'
+      bat 'mvn package'
     }
 }

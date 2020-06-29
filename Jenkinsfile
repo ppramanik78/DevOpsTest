@@ -1,9 +1,19 @@
 pipeline {
-    /* insert Declarative Pipeline here */
-        stage('Code Checkout') {
-            git 'https://github.com/ppramanik78/DevOpsTest'
+    agent none 
+    stages {
+        stage('Example Build') {
+            agent { docker 'maven:3-alpine' } 
+            steps {
+                echo 'Hello, Maven'
+                sh 'mvn --version'
             }
-        stage('Compile and Package') {
-            sh 'mvn package'
         }
+        stage('Example Test') {
+            agent { docker 'openjdk:8-jre' } 
+            steps {
+                echo 'Hello, JDK'
+                sh 'java -version'
+            }
+        }
+    }
 }

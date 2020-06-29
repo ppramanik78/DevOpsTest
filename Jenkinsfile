@@ -2,6 +2,7 @@ pipeline {
   agent none
   stages {
     stage('Example Build') {
+      agent any
       steps {
         echo 'Hello, Maven'
         sh 'mvn --version'

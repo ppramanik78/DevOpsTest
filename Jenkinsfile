@@ -1,11 +1,9 @@
 pipeline {
     /* insert Declarative Pipeline here */
-    node {
         stage('Code Checkout') {
             git 'https://github.com/ppramanik78/DevOpsTest'
             }
         stage('Compile and Package') {
             sh 'mvn package'
-            }
-      }
+        }
 }
